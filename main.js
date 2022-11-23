@@ -4,7 +4,7 @@ Write a function that parses through the below object and displays all of their
 favorite food dishes as shown:
 */
 
-let person3 = {
+const person3 = {
     pizza:["Deep Dish","South Side Thin Crust"],
     tacos:"Anything not from Taco bell",
     burgers:"Portillos Burgers",
@@ -17,18 +17,19 @@ let person3 = {
         cupids_candies:"Chocolate Malt"
     }]
 }
+// for (const property in person3){
+//     console.log(`${property}: ${person3[property]}`);
+// }
 
-
-person3.forEach(element => {
-    if (Array.isArray(element)){
-        if (typeof element[0] === 'object'){
-            for (let i = 0; i < Object.keys(element[0]).length; i++);
-            console.log(`${Object.keys(element[0][i])}: ${Object.values(element[0][i])}`)
+for (const property in person3){
+    if (typeof property[0] == 'object'){
+        for (const property in person3){
+            console.log(`${property}: ${person3[property]}`);
         }
+    }else{
+        console.log(`${property}: ${person3[property]}`);
     }
-    })
-
-
+}
 
 //=======Exercise #2=========//
 /*
